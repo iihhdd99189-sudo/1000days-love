@@ -46,6 +46,12 @@ function loadScene(sceneKey) {
     btn.onclick = () => loadScene(choice.next);
     choicesDiv.appendChild(btn);
   });
+  if (sceneKey === "ending") {
+  const resetBtn = document.createElement("button");
+  resetBtn.innerText = "처음으로 돌아가기 💖";
+  resetBtn.onclick = () => loadScene("start");
+  choicesDiv.appendChild(resetBtn);
+  }
 }
 
 loadScene("start");

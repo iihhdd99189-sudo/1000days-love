@@ -13,14 +13,17 @@ function addButton(label, onClick) {
   btn.onclick = onClick;
   choices.appendChild(btn);
 }
-
+const bgm = document.getElementById("bgm");
 // 0. 시작 화면
 function startScreen() {
   img.style.display = "none";
   text.innerText = "두근두근 미연시 시작? ❤️";
   clearChoices();
 
-  addButton("시작하기", scene1);
+  addButton("시작하기", () => {
+    bgm.play(); // 👉 여기 추가
+    scene1();
+  });
 }
 
 // 1번
@@ -106,14 +109,11 @@ function scene5() {
 // 6번 (엔딩)
 function scene6() {
   img.src = "scene6.png";
-  text.innerText = "이건... 내가 준비한 거야";
+  text.innerText = "1000일 축하해 ❤️";
   clearChoices();
-
+  
+  bgm.volume = 0.2;
   audio.play();
-
-  setTimeout(() => {
-    text.innerText = "1000일 축하해 ❤️";
-  }, 2000);
 
   addButton("처음으로", startScreen);
 }

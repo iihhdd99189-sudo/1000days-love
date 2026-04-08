@@ -22,10 +22,14 @@ function startScreen() {
   text.innerText = "두근두근 미연시 시작? ❤️";
   clearChoices();
 
-  addButton("시작하기", () => {
-    bgm.play(); // 👉 여기 추가
-    scene1();
+ addButton("시작하기", () => {
+  bgm.play();
+  gameoverSound.play().then(() => {
+    gameoverSound.pause();
+    gameoverSound.currentTime = 0;
   });
+  scene1();
+});
 }
 
 // 1번
@@ -123,18 +127,26 @@ function scene6() {
 // 게임오버 공통 함수
 function gameOver(message) {
   return () => {
+    console.log("게임오버 실행됨"); // 👈 확인용
+
     img.style.display = "none";
     text.innerText = message;
     clearChoices();
 
-    bgm.pause();
-    bgm.currentTime = 0;
-    gameoverSound.currentTime = 0;
-    gameoverSound.play();
-    
+    // 👉 BGM 정지
+    if (bgm) {
+      bgm.pause();
+      bgm.currentTime = 0;
+    }
+
+    // 👉 효과음 재생
+    if (gameoverSound) {
+      gameoverSound.currentTime = 0;
+      gameoverSound.play().catch(e => console.log(e));
+    }
+
     addButton("처음으로 돌아가기", startScreen);
   };
 }
-
 // 시작
 startScreen();

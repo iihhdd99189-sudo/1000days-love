@@ -142,6 +142,7 @@ function gameOver(message) {
     // 👉 효과음 재생
     if (gameoverSound) {
       gameoverSound.currentTime = 0;
+      gameoverSound.volume = 0.3;
       gameoverSound.play().catch(e => console.log(e));
     }
 

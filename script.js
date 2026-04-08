@@ -2,6 +2,8 @@ const img = document.getElementById("scene-image");
 const text = document.getElementById("story-text");
 const choices = document.getElementById("choices");
 const audio = document.getElementById("voice");
+const gameoverSound = document.getElementById("gameover-sound");
+const bgm = document.getElementById("bgm");
 
 function clearChoices() {
   choices.innerHTML = "";
@@ -13,7 +15,7 @@ function addButton(label, onClick) {
   btn.onclick = onClick;
   choices.appendChild(btn);
 }
-const bgm = document.getElementById("bgm");
+
 // 0. 시작 화면
 function startScreen() {
   img.style.display = "none";
@@ -124,6 +126,12 @@ function gameOver(message) {
     img.style.display = "none";
     text.innerText = message;
     clearChoices();
+
+    bgm.pause();
+    bgm.currentTime = 0;
+    gameoverSound.currentTime = 0;
+    gameoverSound.play();
+    
     addButton("처음으로 돌아가기", startScreen);
   };
 }

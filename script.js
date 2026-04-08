@@ -27,11 +27,11 @@ function startScreen() {
 function scene1() {
   img.src = "scene1.png";
   img.style.display = "block";
-  text.innerText = "(1번 장면 텍스트)";
+  text.innerText = "소개팅 약속장소인 혜화역... 어 저사람 내 이상형인데... 말 걸어볼까..?";
   clearChoices();
 
   addButton("말을 건다", () => {
-    text.innerText = "(성공 텍스트)";
+    text.innerText = "현도는 약간 이상하지만 좋은 사람이다... 앞으로도 더 만나보고싶어..!";
     clearChoices();
     addButton("다음으로", scene2);
   });
@@ -42,13 +42,13 @@ function scene1() {
 // 2번
 function scene2() {
   img.src = "scene2.png";
-  text.innerText = "(2번 장면 텍스트)";
+  text.innerText = "현도와 같이 영화관에 왔다. 갑자기 안경을 썼다 벗었다 하며 뭐가 어울리냐고 물어보는데..?";
   clearChoices();
 
-  addButton("안경 벗은 게 더 좋아", gameOver("이런 솔직히 말하지 못했어... 게임 오버 !"));
+  addButton("안경 벗은 게 더 좋아", gameOver("그 날 이후로 안경 쓴 현도를 다시는 보지 못했다... 게임 오버 !"));
 
   addButton("안경 쓴 게 더 좋아", () => {
-    text.innerText = "(성공 텍스트)";
+    text.innerText = "현도는 수줍어하며 안경을 쓴다... 귀여운 사람이잖아..?";
     clearChoices();
     addButton("다음으로", scene3);
   });
@@ -56,18 +56,18 @@ function scene2() {
 
 // 3번
 function scene3() {
-  img.src = "scene3.png";
-  text.innerText = "(3번 장면 텍스트)";
+  img.src = "scene3.jpg";
+  text.innerText = "현도와 만나 즐거운 하루를 보냈다. 곧 고백 받을 수도 있을 것 같은데... 무슨 말이라도 할까..?";
   clearChoices();
 
   addButton("나는 나랑 비슷한 사람이 좋아!", () => {
-    text.innerText = "(결과 텍스트)";
+    text.innerText = "현도가 반가운 기색으로 대화를 이어나간다. 이 날 저녁 우리는 사귀기로 했다..";
     clearChoices();
     addButton("다음으로", scene4);
   });
 
   addButton("나는 나랑 다른 점이 많은 사람이 좋아!", () => {
-    text.innerText = "(결과 텍스트)";
+    text.innerText = "갑자기 현도의 표정이 어두워졌다 ... 이후 며칠이 더 지나서야 우리는 사귀게 되었다..";
     clearChoices();
     addButton("다음으로", scene4);
   });
@@ -75,32 +75,32 @@ function scene3() {
 
 // 4번
 function scene4() {
-  img.src = "scene4.png";
-  text.innerText = "(4번 장면 텍스트)";
+  img.src = "scene4.jpg";
+  text.innerText = "잘 사귀던 도중 현도가 물에 빠지는 사고가 발생했다..! 옆에는 내 소중한 팽도리도 있는데... 어쩌지??";
   clearChoices();
 
-  addButton("남자를 구한다", () => {
-    text.innerText = "(성공 텍스트)";
+  addButton("현도를 구한다", () => {
+    text.innerText = "현도를 구하려 손을 뻗자 팽도리가 도와줘서 무사히 구출할 수 있었다..!";
     clearChoices();
     addButton("다음으로", scene5);
   });
 
-  addButton("팽도리를 구한다", gameOver("팽도리는 스스로 나올 수 있었다.. 스스로 나오지 못한 남자는... 게임 오버 !"));
+  addButton("팽도리를 구한다", gameOver("물타입인 팽도리는 스스로 나올 수 있었다.. 스스로 나오지 못한 현도는... 게임 오버 !"));
 }
 
 // 5번
 function scene5() {
   img.src = "scene5.png";
-  text.innerText = "(5번 장면 텍스트)";
+  text.innerText = "구해줘서 고맙다며 현도가 선물을 준비했다..! 어쩌지?";
   clearChoices();
 
   addButton("열어본다.", () => {
-    text.innerText = "(성공 텍스트)";
+    text.innerText = "무슨 선물이 들었을까...";
     clearChoices();
     addButton("다음으로", scene6);
   });
 
-  addButton("선물을 버린다", gameOver("남자는 실망하며 떠나가버렸다... 게임 오버 !"));
+  addButton("수상해... 선물을 버린다", gameOver("현도는 실망하며 떠나가버렸다... 게임 오버 !"));
 }
 
 // 6번 (엔딩)

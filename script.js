@@ -56,7 +56,7 @@ function scene2() {
 
 // 3번
 function scene3() {
-  img.src = "scene3.jpg";
+  img.src = "scene3.png";
   text.innerText = "현도와 만나 즐거운 하루를 보냈다. 곧 고백 받을 수도 있을 것 같은데... 무슨 말이라도 할까..?";
   clearChoices();
 
@@ -75,7 +75,7 @@ function scene3() {
 
 // 4번
 function scene4() {
-  img.src = "scene4.jpg";
+  img.src = "scene4.png";
   text.innerText = "잘 사귀던 도중 현도가 물에 빠지는 사고가 발생했다..! 옆에는 내 소중한 팽도리도 있는데... 어쩌지??";
   clearChoices();
 
